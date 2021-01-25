@@ -225,6 +225,9 @@ def get_icons(channel, chid, overwrite=False):
 
                     logging.info("icon url is [not recorded due to API key being included]")
 
+                    destinationDir = parseFormat(DESTINATION_FORMAT, uploader, upload_date, title, channelID, id)
+                    destinationDir = os.path.join(DESTINATION_FOLDER, destinationDir)
+
                     data = url_data.read()
                     data = json.loads(data.decode('utf-8'))
                     icon_url = data['items'][0]['snippet']['thumbnails']['high']['url']
