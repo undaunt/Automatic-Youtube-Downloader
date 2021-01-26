@@ -79,6 +79,12 @@ So if i wanted 4k videos the line would look line
 
 `VIDEO_FORMAT=2160p`
 
+To use the granular 'best' options set the following:
+
+`VIDEO_FORMAT=best`
+
+That sets several descending recursive priorities to get the best possible video file. It prioritizes 4k, then 144p, then 1080p, then finally 720p. It also prefers higher bit rates before 30 fps. Lastly, it prioritizes the AV02 video codec, then VP9.2 (HDR compatible), then VP9, and finally any other available video codec such as AVC1. It also prioritizes the highest bitrate audio file that is 48kHz over 44.1KHz.
+
 ## Usage
 
 ```
