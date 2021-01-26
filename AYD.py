@@ -507,11 +507,9 @@ def main(my_sch):
 
                         # Get format codes to use
                         usable_extension = 'webm'
-                       # usable_format_code_video = 'bestvideo[ext=webm]'
-                       # usable_format_code_audio = 'bestaudio'
                         containsWebmContent = False
 
-                        usable_format_code_audio = '(bestaudio[ext=m4a]/bestaudio)'
+                        usable_format_code_audio = '(bestaudio[asr=48000]/bestaudio)'
                         usable_format_code_video = '(bestvideo[vcodec^=av01][height>=2160][fps>30]/' \
                                               'bestvideo[vcodec=vp9.2][height>=2160][fps>30]/' \
                                               'bestvideo[vcodec=vp9][height>=2160][fps>30]/' \
@@ -595,6 +593,10 @@ def main(my_sch):
                                 # need to put channelid in here because what youtube-dl gives may be incorrect
                                 # 'simulate': 'true',
                                 'writethumbnail': 'true',
+                                'addmetadata': 'true',
+                                'embedthumbnail': 'true',
+                                'embedsubs': 'true',
+                                'allsubs': 'true',
                                 'forcetitle': 'true',
                                 'ffmpeg_location': './ffmpeg/bin/',
                                 'ignoreerrors': 'true',
@@ -605,6 +607,10 @@ def main(my_sch):
                             ydl_opts = {
                                 'outtmpl': os.path.join('Download', uploader, filename_format + '.%(ext)s'),
                                 'writethumbnail': 'true',
+                                'addmetadata': 'true',
+                                'embedthumbnail': 'true',
+                                'embedsubs': 'true',
+                                'allsubs': 'true',
                                 'forcetitle': 'true',
                                 'format': usable_format_code_video + "+" + usable_format_code_audio + '/best'
                             }
