@@ -83,7 +83,9 @@ To use the granular 'best' options set the following:
 
 `VIDEO_FORMAT=best`
 
-That sets several descending recursive priorities to get the best possible video file. It prioritizes 4k, then 144p, then 1080p, then finally 720p. It also prefers higher bit rates before 30 fps. Lastly, it prioritizes the AV02 video codec, then VP9.2 (HDR compatible), then VP9, and finally any other available video codec such as AVC1. It also prioritizes the highest bitrate audio file that is 48kHz over 44.1KHz.
+That sets several descending recursive priorities to get the best possible video file. It prioritizes 4k, then 1440p, then 1080p, then finally 720p. It also prefers higher bit rates before 30 fps. Lastly, it prioritizes the AV02 video codec, then VP9.2 (HDR compatible), then VP9, and finally any other available video codec such as AVC1. It also prioritizes the highest bitrate audio file that is 48kHz over 44.1KHz.
+
+If no 720p or higher video is available, or any of the requested video codecs are not available, it will default to youtube-dl's 'bestvideo' choice at the highest possible resolution.
 
 ## Usage
 
